@@ -2,7 +2,10 @@
 # with following call:
 # >rix::rix(r_ver = "4.5.0",
 #  > r_pkgs = c("languageserver",
-#  > "glue"),
+#  > "httpgd",
+#  > "jsonlite",
+#  > "glue",
+#  > "rix"),
 #  > system_pkgs = NULL,
 #  > git_pkgs = NULL,
 #  > ide = "none",
@@ -18,14 +21,17 @@ let
   rpkgs = builtins.attrValues {
     inherit (pkgs.rPackages) 
       glue
-      languageserver;
+      httpgd
+      jsonlite
+      languageserver
+      rix;
   };
      
   system_packages = builtins.attrValues {
     inherit (pkgs) 
+      R
       glibcLocales
-      nix
-      R;
+      nix;
   };
   
   shell = pkgs.mkShell {
