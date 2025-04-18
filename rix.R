@@ -7,10 +7,10 @@ Sys.setenv(GITHUB_PAT = my_token)
 # Snapshot rix environment
 rix::rix(
   r_ver = "4.5.0",
-  r_pkgs = c("glue"),
+  r_pkgs = c("languageserver", "glue"),
   system_pkgs = NULL,
   git_pkgs = NULL,
-  ide = "positron",
+  ide = "none",
   project_path = ".",
   overwrite = TRUE
 )
